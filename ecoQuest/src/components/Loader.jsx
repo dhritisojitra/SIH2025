@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ForestLoader({ size = 160 }) {
   // size controls the SVG viewport (square)
-  const bg = 'bg-white';
+  const bg = 'bg-lime-800';
   const wrapper = `flex items-center justify-center min-h-screen ${bg} p-6`;
 
   return (
