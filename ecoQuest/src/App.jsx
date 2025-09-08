@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ForestLoader from './components/Loader'
 import Cards from './components/Cards'
+import DuolingoRoadmap from './test'  
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
     <>
       {/* <ForestLoader/> */}
       <Cards/>
+      <DuolingoRoadmap />   {/* road-map*/}
     </>
   )
 }
