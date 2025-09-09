@@ -1,19 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ForestLoader from './components/Loader'
 import Cards from './components/Cards'
-import DuolingoRoadmap from './test'  
+import DuolingoRoadmap from './components/test'  
+import EcoNavbar from './components/NavBar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* <ForestLoader/> */}
+      <EcoNavbar/>
+      <ForestLoader/>
       <Cards/>
       <DuolingoRoadmap />   {/* road-map*/}
+      
     </>
   )
 }
