@@ -1,23 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DuolingoRoadmap from "./test";
 import EcoQuizPage from "./pages/Quiz";  
 import "./App.css";
 import Cards from "./components/Cards";
 import EcoQuestRoadmap from "./pages/test";
+import EcoNavbar from "./components/NavBar";
+import HeroSection from "./pages/HeroPage";
 
 function App() {
-  return (
-    // <Router>
-    //   <Routes>
-    //     {/* Roadmap page */}
-    //     <Route path="/" element={<DuolingoRoadmap />} />
+  return (<>
+    <EcoNavbar/>
+      <Routes>
+        {/* Roadmap page */}
+        <Route path="/" element={<HeroSection/>} />
+        <Route path="/roadmap" element={<EcoQuestRoadmap/>} />
 
-    //     {/* Quiz page */}
-    //     <Route path="/quiz" element={<EcoQuizPage />} />
-    //   </Routes>
-    // </Router>
+        {/* Quiz page */}
+        <Route path="/quiz" element={<EcoQuizPage />} />
+      </Routes>
   
-   <EcoQuestRoadmap/>
+
+   </>
   );
 }
 

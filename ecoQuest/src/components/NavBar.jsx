@@ -1,5 +1,6 @@
 import { Home, Search, Menu, X, Leaf, User, BookOpen, TestTube } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 export default function EcoNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +35,7 @@ export default function EcoNavbar() {
         <div className="flex justify-between items-center h-16">
           
           {/* Logo */}
+            <Link to="/">
           <div className="flex items-center space-x-3 cursor-pointer group">
             <div className={`${theme.leafBg} group-hover:${theme.leafBgHover} p-2 rounded-full backdrop-blur-sm transition-all duration-300`}>
               <Leaf className={`h-6 w-6 ${theme.leafIconColor}`} />
@@ -42,6 +44,7 @@ export default function EcoNavbar() {
               EcoSave
             </span>
           </div>
+          </Link>
 
           {/* Desktop Search Bar */}
           <div className="hidden md:flex flex-1 max-w-md mx-8">
@@ -64,10 +67,10 @@ export default function EcoNavbar() {
 
           {/* Desktop Navigation Items */}
           <div className="hidden md:flex items-center space-x-2">
-            <NavItem icon={Home} text="Home" theme={theme} />
-            <NavItem icon={BookOpen} text="Resources" theme={theme} />
-            <NavItem icon={TestTube} text="Test" theme={theme} />
-            <UserProfile theme={theme} />
+            <Link to="/"><NavItem icon={Home} text="Home" theme={theme} /></Link>
+            <Link to="/resources"><NavItem icon={BookOpen} text="Resources" theme={theme} /></Link>
+            <Link to="/roadmap"><NavItem icon={TestTube} text="Test" theme={theme} /></Link>
+            <Link to="/dashboard"><UserProfile theme={theme} /></Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,10 +106,10 @@ export default function EcoNavbar() {
             
             {/* Mobile Navigation Items */}
             <div className="space-y-2 px-2">
-              <MobileNavItem icon={Home} text="Home" theme={theme} />
-              <MobileNavItem icon={BookOpen} text="Resources" theme={theme} />
-              <MobileNavItem icon={TestTube} text="Test" theme={theme} />
-              <MobileNavItem icon={User} text="Profile" theme={theme} />
+              <Link to="/"><MobileNavItem icon={Home} text="Home" theme={theme} /></Link>
+              <Link to="/resources"><MobileNavItem icon={BookOpen} text="Resources" theme={theme} /></Link>
+              <Link to="/roadmap"><MobileNavItem icon={TestTube} text="Test" theme={theme} /></Link>
+              <Link to="/dashboard"><MobileNavItem icon={User} text="Profile" theme={theme} /></Link>
             </div>
           </div>
         </div>
