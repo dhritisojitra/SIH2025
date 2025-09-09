@@ -1,21 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ForestLoader from './components/Loader'
-import Cards from './components/Cards'
-import DuolingoRoadmap from './test'  
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import DuolingoRoadmap from "./test";
+import EcoQuizPage from "./pages/Quiz";  // 👈 make sure this path is correct
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      {/* <ForestLoader/> */}
-      <Cards/>
-      <DuolingoRoadmap />   {/* road-map*/}
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Roadmap page */}
+        <Route path="/" element={<DuolingoRoadmap />} />
+
+        {/* Quiz page */}
+        <Route path="/quiz" element={<EcoQuizPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
