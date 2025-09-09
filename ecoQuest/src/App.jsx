@@ -3,14 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ForestLoader from './components/Loader'
+import StreakTracker from './components/StreakTracker.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <ForestLoader/>
-    </>
+    <div className="App">
+      
+      <StreakTracker/>
+    </div>
   )
 }
 
