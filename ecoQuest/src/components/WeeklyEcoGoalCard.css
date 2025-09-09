@@ -1,0 +1,279 @@
+@media (max-width: 900px) {
+  .weekly-eco-goal-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 32px;
+  }
+  .eco-goal-upload-column {
+    align-items: center !important;
+  }
+}
+@media (max-width: 900px) {
+  .weekly-eco-goal-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .eco-goal-upload-column {
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .profile-card-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.profile-points-label {
+  font-size: 1rem;
+  color: #234b1a;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-left: -280px;
+  margin-top: 30px;
+}
+
+.profile-points-input {
+  width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #d4eac7;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #234b1a;
+  background: #f8fbf4;
+  outline: none;
+  margin-top: -40px;
+  margin-left: 200px;
+}
+
+.profile-badges-label {
+  font-size: 1rem;
+  color: #234b1a;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-left: -280px;
+  margin-top: 30px;
+}
+
+.profile-badges-input {
+  width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #d4eac7;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #234b1a;
+  background: #f8fbf4;
+  outline: none;
+  margin-top: -40px;
+  margin-left: 200px;
+}
+.profile-bio-label {
+  font-size: 1rem;
+  color: #234b1a;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 6px;
+  margin-right: 310px;
+}
+
+.profile-bio-input {
+  width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #d4eac7;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #234b1a;
+  background: #f8fbf4;
+  outline: none;
+  margin-top: -40px;
+  margin-left: 200px;
+}
+.profile-username-section {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-username-label {
+  font-size: 1rem;
+  color: #234b1a;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-left: -250px;
+  margin-top: 30px;
+}
+
+.profile-username-input {
+  width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #d4eac7;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #234b1a;
+  background: #f8fbf4;
+  outline: none;
+  margin-top:-40px;
+  margin-left: 200px;
+}
+.upload-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.upload-modal-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 40px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.upload-modal-content {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.upload-modal-file {
+  margin-left: 12px;
+  font-size: 1rem;
+}
+
+.upload-modal-close {
+  align-self: flex-end;
+  background: #eaf8e2;
+  color: #234b1a;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.eco-goal-upload-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 32px;
+  flex: 1;
+}
+
+.upload-card {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 410px;
+  margin-top:0px;
+  margin-right: 47px;
+}
+
+.upload-card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-plus-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eaf8e2;
+  color: #234b1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.upload-text {
+  font-size: 1.2rem;
+  color: #234b1a;
+  font-weight: 500;
+}
+
+/* Dashboard flex container for side-by-side cards (profile only) */
+.dashboard-flex-container {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profile-card-wrapper {
+  width: 300px;
+}
+
+
+.profile-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 24px 32px;
+  width:700px;
+  height:440px;
+  margin-top: -30px;
+}
+
+.profile-card-text {
+  text-align: center;
+  color: #234b1a;
+  font-weight: bold;
+}
+
+.weekly-eco-goal-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.weekly-goal-card {
+  width: 400px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right:50px;
+  margin-top:-29px;
+}
+
+.daily-actions-card {
+ 
+  width: 400px;
+  min-height: 200px;
+  padding: 24px 32px;
+  margin-right: 50px;
+}
+
+.profile-image {
+  width: 100px;      /* Change for image width */
+  height: 100px;     /* Change for image height */
+  border-radius: 50%; /* Optional: make it circular */
+  object-fit: cover;  /* Ensures the image covers the area */
+  border: 2px solid #131313;
+}

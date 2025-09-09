@@ -413,3 +413,28 @@ body {
   margin-top: 18px;
 
 }
+
+@media (max-width: 900px) {
+  .streak-tracker-layout {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: row;
+}
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .calendar-card {
+    margin: 24px auto 0 auto !important;
+  }
+}
+@media (max-width: 900px) {
+  .streak-tracker-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .calendar-card {
+    margin: 24px auto 0 auto !important;
+  }
+}
