@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DuolingoRoadmap from "./test";
+import DuolingoRoadmap from "./components/test";
 import EcoQuizPage from "./pages/Quiz";  // 👈 make sure this path is correct
 import "./App.css";
+import EcoNavbar from "./components/NavBar";
 
 function App() {
-  return (
+  return (<>
+    <EcoNavbar/>
     <Router>
       <Routes>
         {/* Roadmap page */}
@@ -14,6 +16,7 @@ function App() {
         <Route path="/quiz" element={<EcoQuizPage />} />
       </Routes>
     </Router>
+    </>
   );
 }
 

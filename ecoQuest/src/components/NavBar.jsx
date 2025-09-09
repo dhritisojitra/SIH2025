@@ -1,4 +1,4 @@
-import { Search, Menu, X, Leaf, User, BookOpen, TestTube } from 'lucide-react';
+import { Home, Search, Menu, X, Leaf, User, BookOpen, TestTube } from 'lucide-react';
 import { useState } from 'react';
 
 export default function EcoNavbar() {
@@ -23,16 +23,14 @@ export default function EcoNavbar() {
     inputBg: 'bg-[#F5F5DC]/90',       // Semi-transparent beige for input fields
     inputFocus: 'focus:bg-[#F5F5DC]',
     placeholder: 'placeholder-green-900/60',
-    // New: Lighter color for the leaf icon itself
     leafIconColor: 'text-[#D4EDC1]', // A soft, light green for the leaf
-    // New: Slightly different background for the leaf icon circle
     leafBg: 'bg-[#6F8A67]',          // A medium, muted green for the icon's background circle
     leafBgHover: 'bg-[#8CA282]',     // A slightly lighter hover for the icon's background
   };
 
   return (
     <nav className={`${theme.primary} shadow-md sticky top-0 z-50`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           
           {/* Logo */}
@@ -65,7 +63,8 @@ export default function EcoNavbar() {
           </div>
 
           {/* Desktop Navigation Items */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-2">
+            <NavItem icon={Home} text="Home" theme={theme} />
             <NavItem icon={BookOpen} text="Resources" theme={theme} />
             <NavItem icon={TestTube} text="Test" theme={theme} />
             <UserProfile theme={theme} />
@@ -104,6 +103,7 @@ export default function EcoNavbar() {
             
             {/* Mobile Navigation Items */}
             <div className="space-y-2 px-2">
+              <MobileNavItem icon={Home} text="Home" theme={theme} />
               <MobileNavItem icon={BookOpen} text="Resources" theme={theme} />
               <MobileNavItem icon={TestTube} text="Test" theme={theme} />
               <MobileNavItem icon={User} text="Profile" theme={theme} />
