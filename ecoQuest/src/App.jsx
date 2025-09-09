@@ -3,7 +3,7 @@ import DuolingoRoadmap from "./test";
 import EcoQuizPage from "./pages/Quiz";  
 import "./App.css";
 import Cards from "./components/Cards";
-import EcoQuestRoadmap from "./test";
+import EcoQuestRoadmap from "./pages/test";
 
 function App() {
   return (
