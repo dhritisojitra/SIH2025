@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import EcoNavbar from '../components/NavBar';
+import Footer from "../components/Footer"
 
-// Single-file React component (fixed finish-quiz bug + cleaned up flow)
+// Single-file React component with full-page scroll-snap effect
 export default function EcoQuestRoadmap() {
   const [completedQuizzes, setCompletedQuizzes] = useState([]);
   const [showQuiz, setShowQuiz] = useState(false);
   const [currentLevel, setCurrentLevel] = useState(null);
 
-  // ---------- Roadmap data (kept same as your original) ----------
+  // ---------- Roadmap data (no changes) ----------
   const roadmapData = [
     {
       topic: 'Water Management',
@@ -64,8 +64,7 @@ export default function EcoQuestRoadmap() {
     {
       topic: 'Biodiversity',
       themeColor: 'purple',
-      backgroundGif:
-        'https://i.pinimg.com/originals/e5/7c/e1/e57ce195528ef472074b16552d0440e8.gif',
+      backgroundGif: 'https://i.pinimg.com/originals/e5/7c/e1/e57ce195528ef472074b16552d0440e8.gif',
       mascot: '🦋',
       mascotMessage: 'Guardian of nature! 🌺',
       levels: [
@@ -77,7 +76,7 @@ export default function EcoQuestRoadmap() {
     },
   ];
 
-  // ---------- Quiz data (kept same) ----------
+  // ---------- Quiz data (no changes) ----------
   const quizData = {
     'water-1': {
       title: 'Water Basics',
@@ -89,8 +88,7 @@ export default function EcoQuestRoadmap() {
           question: "How much of Earth's water is freshwater?",
           options: ['~10%', '~2.5%', '~50%'],
           correct: 1,
-          explanation:
-            "About 2.5% of Earth's water is freshwater, and most of that is locked in glaciers and ice caps.",
+          explanation: "About 2.5% of Earth's water is freshwater, and most of that is locked in glaciers and ice caps.",
         },
         {
           id: 2,
@@ -98,8 +96,7 @@ export default function EcoQuestRoadmap() {
           question: 'What is the largest consumer of household water?',
           options: ['Toilets', 'Washing machine', 'Showers'],
           correct: 0,
-          explanation:
-            "Toilets are the largest users of water in an average home, accounting for nearly 30% of indoor water use.",
+          explanation: 'Toilets are the largest users of water in an average home, accounting for nearly 30% of indoor water use.',
         },
       ],
     },
@@ -113,20 +110,15 @@ export default function EcoQuestRoadmap() {
           question: 'What is a simple way to save water while brushing your teeth?',
           options: ['Use a cup of water', 'Leave the faucet running', 'Brush with a hose'],
           correct: 0,
-          explanation:
-            'Using a cup of water instead of letting the faucet run can save several gallons of water a day.',
+          explanation: 'Using a cup of water instead of letting the faucet run can save several gallons of water a day.',
         },
         {
           id: 2,
           difficulty: 'medium',
-          question: "How can you tell if your toilet has a leak?",
-          options: [
-            'It makes a hissing sound',
-            'It flushes on its own',
-            'Put a few drops of food coloring in the tank and check the bowl after 15 minutes.',
-          ],
+          question: 'How can you tell if your toilet has a leak?',
+          options: ['It makes a hissing sound', 'It flushes on its own', 'Put a few drops of food coloring in the tank and check the bowl after 15 minutes.'],
           correct: 2,
-          explanation: "If the food coloring appears in the bowl without flushing, you have a leak!",
+          explanation: 'If the food coloring appears in the bowl without flushing, you have a leak!',
         },
       ],
     },
@@ -140,8 +132,7 @@ export default function EcoQuestRoadmap() {
           question: 'What is a rain barrel used for?',
           options: ['To wash your car', 'To collect rainwater for later use', 'To store garbage'],
           correct: 1,
-          explanation:
-            'A rain barrel collects rainwater from a downspout, which can then be used for watering plants or other non-potable uses.',
+          explanation: 'A rain barrel collects rainwater from a downspout, which can then be used for watering plants or other non-potable uses.',
         },
       ],
     },
@@ -155,8 +146,7 @@ export default function EcoQuestRoadmap() {
           question: "Which of the following is an example of 'reducing' waste?",
           options: ['Reusing a glass jar', 'Buying products with less packaging', 'Recycling a plastic bottle'],
           correct: 1,
-          explanation:
-            'Reducing means creating less waste in the first place, like buying items with minimal packaging.',
+          explanation: 'Reducing means creating less waste in the first place, like buying items with minimal packaging.',
         },
       ],
     },
@@ -168,14 +158,9 @@ export default function EcoQuestRoadmap() {
           id: 1,
           difficulty: 'medium',
           question: "What is 'downcycling'?",
-          options: [
-            "Recycling a material into a lower quality product",
-            'Recycling a material into a higher quality product',
-            'Burning waste for energy',
-          ],
+          options: ["Recycling a material into a lower quality product", 'Recycling a material into a higher quality product', 'Burning waste for energy'],
           correct: 0,
-          explanation:
-            'Downcycling is when a recycled material is used to create a product of lesser quality, such as recycling plastic bottles into a park bench.',
+          explanation: 'Downcycling is when a recycled material is used to create a product of lesser quality, such as recycling plastic bottles into a park bench.',
         },
       ],
     },
@@ -186,7 +171,7 @@ export default function EcoQuestRoadmap() {
         {
           id: 1,
           difficulty: 'hard',
-          question: "What is the universal symbol for recycling?",
+          question: 'What is the universal symbol for recycling?',
           options: ['A green circle', 'Three chasing arrows', 'A single arrow'],
           correct: 1,
           explanation: 'The Mobius loop, or three chasing arrows, is the international symbol for recycling.',
@@ -203,8 +188,7 @@ export default function EcoQuestRoadmap() {
           question: "What is a 'carbon footprint'?",
           options: ["The size of your shoe print", 'The total amount of greenhouse gases you produce', 'How far you walk in a day'],
           correct: 1,
-          explanation:
-            'A carbon footprint measures the total amount of greenhouse gases emitted by a person, organization, event, or product.',
+          explanation: 'A carbon footprint measures the total amount of greenhouse gases emitted by a person, organization, event, or product.',
         },
       ],
     },
@@ -215,12 +199,10 @@ export default function EcoQuestRoadmap() {
         {
           id: 1,
           difficulty: 'medium',
-          question:
-            'Which mode of transport has the smallest carbon footprint per passenger-mile?',
+          question: 'Which mode of transport has the smallest carbon footprint per passenger-mile?',
           options: ['Airplane', 'Car', 'Train'],
           correct: 2,
-          explanation:
-            'Trains are generally more energy-efficient and produce fewer emissions per passenger than cars or airplanes.',
+          explanation: 'Trains are generally more energy-efficient and produce fewer emissions per passenger than cars or airplanes.',
         },
       ],
     },
@@ -232,14 +214,9 @@ export default function EcoQuestRoadmap() {
           id: 1,
           difficulty: 'hard',
           question: "What is 'vampire power'?",
-          options: [
-            "Energy used by appliances when turned off but still plugged in",
-            'Energy used by a vacuum cleaner',
-            'Power for a horror movie',
-          ],
+          options: ["Energy used by appliances when turned off but still plugged in", 'Energy used by a vacuum cleaner', 'Power for a horror movie'],
           correct: 0,
-          explanation:
-            'Vampire power, or phantom load, is the energy consumed by electronic devices while they are in standby mode.',
+          explanation: 'Vampire power, or phantom load, is the energy consumed by electronic devices while they are in standby mode.',
         },
       ],
     },
@@ -253,8 +230,7 @@ export default function EcoQuestRoadmap() {
           question: 'Which of these is a fossil fuel?',
           options: ['Solar', 'Coal', 'Wind'],
           correct: 1,
-          explanation:
-            'Coal is a fossil fuel formed from the remains of plants and animals, while solar and wind are renewable energy sources.',
+          explanation: 'Coal is a fossil fuel formed from the remains of plants and animals, while solar and wind are renewable energy sources.',
         },
       ],
     },
@@ -268,8 +244,7 @@ export default function EcoQuestRoadmap() {
           question: 'What is the main component of a solar panel?',
           options: ['Plastic', 'Glass', 'Silicon'],
           correct: 2,
-          explanation:
-            'Solar panels are made of photovoltaic cells, which are composed of silicon to convert sunlight into electricity.',
+          explanation: 'Solar panels are made of photovoltaic cells, which are composed of silicon to convert sunlight into electricity.',
         },
       ],
     },
@@ -281,14 +256,9 @@ export default function EcoQuestRoadmap() {
           id: 1,
           difficulty: 'hard',
           question: 'How do wind turbines generate electricity?',
-          options: [
-            'By using a motor',
-            "By turning a generator with a turbine's rotation",
-            'By heating water',
-          ],
+          options: ['By using a motor', "By turning a generator with a turbine's rotation", 'By heating water'],
           correct: 1,
-          explanation:
-            "The wind's force turns the turbine blades, which spins a rotor connected to a generator to produce electricity.",
+          explanation: "The wind's force turns the turbine blades, which spins a rotor connected to a generator to produce electricity.",
         },
       ],
     },
@@ -302,8 +272,7 @@ export default function EcoQuestRoadmap() {
           question: 'What is biodiversity?',
           options: ['The variety of life in a particular habitat or ecosystem', 'A type of plant', 'A disease affecting animals'],
           correct: 0,
-          explanation:
-            'Biodiversity refers to the incredible variety of life on Earth, from tiny bacteria to giant whales.',
+          explanation: 'Biodiversity refers to the incredible variety of life on Earth, from tiny bacteria to giant whales.',
         },
       ],
     },
@@ -317,8 +286,7 @@ export default function EcoQuestRoadmap() {
           question: 'Why are bees important to ecosystems?',
           options: ['They produce honey', 'They pollinate plants, helping them reproduce', 'They are a food source for birds'],
           correct: 1,
-          explanation:
-            'Bees are crucial pollinators, essential for the reproduction of many plants, including most of our crops.',
+          explanation: 'Bees are crucial pollinators, essential for the reproduction of many plants, including most of our crops.',
         },
       ],
     },
@@ -332,14 +300,13 @@ export default function EcoQuestRoadmap() {
           question: "What percentage of the world's land is covered by forests?",
           options: ['~10%', '~25%', '~30%'],
           correct: 2,
-          explanation:
-            "Forests cover about 30% of the world's land area, playing a vital role in climate regulation and biodiversity.",
+          explanation: "Forests cover about 30% of the world's land area, playing a vital role in climate regulation and biodiversity.",
         },
       ],
     },
   };
 
-  // ---------- Helpers ----------
+  // ---------- Helpers (no changes) ----------
   const getColorVariants = (color) => {
     const colors = {
       blue: {
@@ -376,7 +343,7 @@ export default function EcoQuestRoadmap() {
     return colors[color] || colors.green;
   };
 
-  // ---------- Roadmap component ----------
+  // ---------- Roadmap component (minor styling change) ----------
   const Roadmap = ({ title, levels, themeColor, backgroundGif, mascot, mascotMessage, onLevelClick, completedQuizzes }) => {
     const getNodePosition = (index) => {
       const isLeft = index % 2 === 0;
@@ -397,14 +364,14 @@ export default function EcoQuestRoadmap() {
     const colorScheme = getColorVariants(themeColor);
 
     return (
-      <div className="relative min-h-screen overflow-hidden">
+      // MODIFIED: Changed min-h-screen to h-screen to fit the snap container
+      <div className="relative h-screen overflow-hidden">
         {backgroundGif && (
           <img
             src={backgroundGif}
             alt={`${title} background`}
             className="absolute inset-0 w-full h-full object-cover z-0"
             onError={(e) => {
-              // fallback image when external gif fails
               e.target.onerror = null;
               e.target.src = 'https://placehold.co/600x400/CCCCCC/000000?text=Background+Unavailable';
             }}
@@ -488,7 +455,7 @@ export default function EcoQuestRoadmap() {
     );
   };
 
-  // ---------- Quiz component (fixed scoring & finish flow) ----------
+  // ---------- Quiz component (no changes) ----------
   const Quiz = ({ onBackToRoadmap, onQuizComplete, currentQuiz, themeColor }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -499,7 +466,6 @@ export default function EcoQuestRoadmap() {
     const [resultScore, setResultScore] = useState(null);
 
     const colorScheme = getColorVariants(themeColor);
-
     const totalQuestions = currentQuiz.questions.length;
 
     const getDifficultyColor = (difficulty) => {
@@ -520,35 +486,25 @@ export default function EcoQuestRoadmap() {
       setSelectedAnswer(answerIndex);
     };
 
-    // Submit should only lock the answer + show explanation and record the answeredQuestions.
-    // Score is updated in handleNextQuestion to avoid race conditions with setState.
     const handleSubmitAnswer = () => {
       if (selectedAnswer === null) return;
       const question = currentQuiz.questions[currentQuestion];
       const isCorrect = selectedAnswer === question.correct;
-
-      setAnsweredQuestions((prev) => [
-        ...prev,
-        { questionId: question.id, selectedAnswer, correct: isCorrect },
-      ]);
-
+      setAnsweredQuestions((prev) => [...prev, { questionId: question.id, selectedAnswer, correct: isCorrect }]);
       setShowExplanation(true);
     };
 
     const handleNextQuestion = () => {
-      if (selectedAnswer === null) return; // safety
-
+      if (selectedAnswer === null) return;
       const question = currentQuiz.questions[currentQuestion];
       const isCorrect = selectedAnswer === question.correct;
       const newScore = score + (isCorrect ? 1 : 0);
-
       if (currentQuestion < totalQuestions - 1) {
         setScore(newScore);
         setCurrentQuestion((prev) => prev + 1);
         setSelectedAnswer(null);
         setShowExplanation(false);
       } else {
-        // Finalize: set resultScore synchronously (local variable + explicit set) and mark complete
         setScore(newScore);
         setResultScore(newScore);
         setQuizComplete(true);
@@ -566,12 +522,10 @@ export default function EcoQuestRoadmap() {
       setResultScore(null);
     };
 
-    // Render Results
     if (quizComplete) {
       const finalScore = resultScore !== null ? resultScore : score;
       const percentage = totalQuestions > 0 ? Math.round((finalScore / totalQuestions) * 100) : 0;
       const passed = percentage >= 70;
-
       return (
         <div className="min-h-screen p-4 sm:p-6 font-sans antialiased" style={{ backgroundColor: '#f3f4f6' }}>
           <div className="max-w-lg mx-auto">
@@ -580,26 +534,21 @@ export default function EcoQuestRoadmap() {
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{passed ? 'Congratulations!' : 'Keep Learning!'}</h1>
               <p className="text-gray-600">{passed ? 'You passed the quiz!' : 'Practice makes perfect!'}</p>
             </div>
-
             <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-6">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">{currentQuiz.icon}</div>
                 <h2 className="text-xl font-bold text-gray-800 mb-2">{currentQuiz.title} Complete!</h2>
-
                 <div className="flex items-center justify-center mb-4">
                   <div className="text-3xl font-bold" style={{ color: passed ? colorScheme.primary : '#EF4444' }}>
                     {finalScore}/{totalQuestions}
                   </div>
                   <span className="text-gray-500 ml-2">({percentage}%)</span>
                 </div>
-
                 <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
                   <div className="h-3 rounded-full transition-all duration-500" style={{ width: `${percentage}%`, backgroundColor: passed ? colorScheme.primary : '#EF4444' }} />
                 </div>
-
                 <p className="text-sm text-gray-600 mb-6">{passed ? "Great job! You've unlocked the next level." : "Don't give up! Try again to improve your score."}</p>
               </div>
-
               <div className="space-y-3">
                 <button onClick={handleRestartQuiz} className="w-full py-3 px-4 rounded-xl font-medium transition-all duration-200 hover:scale-105" style={{ backgroundColor: colorScheme.primary, color: 'white' }}>
                   Try Again
@@ -614,9 +563,7 @@ export default function EcoQuestRoadmap() {
       );
     }
 
-    // Render Current Question
     const question = currentQuiz.questions[currentQuestion];
-
     return (
       <div className="min-h-screen p-4 sm:p-6 font-sans antialiased" style={{ backgroundColor: '#f3f4f6' }}>
         <div className="max-w-lg mx-auto">
@@ -624,36 +571,28 @@ export default function EcoQuestRoadmap() {
             <button onClick={onBackToRoadmap} className="p-2 rounded-lg hover:bg-gray-200 transition-colors">
               <div className="text-xl text-gray-600">←</div>
             </button>
-
             <div className="text-center flex-1">
               <div className="text-2xl mb-1">{currentQuiz.icon}</div>
               <h1 className="text-lg font-bold text-gray-800">{currentQuiz.title} Quiz</h1>
             </div>
-
             <div className="w-10" />
           </div>
-
           <div className="mb-6">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-gray-600">Question {currentQuestion + 1} of {totalQuestions}</span>
               <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(question.difficulty)}`}>{question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}</span>
             </div>
-
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div className="h-2 rounded-full transition-all duration-500" style={{ width: `${((currentQuestion + 1) / totalQuestions) * 100}%`, backgroundColor: colorScheme.primary }} />
             </div>
           </div>
-
           <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-6">
             <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-6 leading-relaxed">{question.question}</h2>
-
             <div className="space-y-3 mb-6">
               {question.options.map((option, idx) => {
                 const isCorrect = idx === question.correct;
                 const isSelected = selectedAnswer === idx;
-
                 let buttonStyle = 'w-full p-4 rounded-xl text-left border-2 transition-all duration-200 font-medium';
-
                 if (showExplanation) {
                   if (isCorrect) buttonStyle += ' border-green-500 bg-green-50 text-green-700';
                   else if (isSelected) buttonStyle += ' border-red-500 bg-red-50 text-red-700';
@@ -663,7 +602,6 @@ export default function EcoQuestRoadmap() {
                 } else {
                   buttonStyle += ' border-gray-200 hover:border-gray-300 hover:bg-gray-50';
                 }
-
                 return (
                   <button key={idx} onClick={() => handleAnswerSelect(idx)} className={buttonStyle} style={isSelected && !showExplanation ? { backgroundColor: colorScheme.primary, borderColor: colorScheme.primary, color: 'white' } : {}} disabled={showExplanation}>
                     <span className="flex items-center">
@@ -674,7 +612,6 @@ export default function EcoQuestRoadmap() {
                 );
               })}
             </div>
-
             {showExplanation && (
               <div className="mb-6 p-4 rounded-xl bg-blue-50 border-2 border-blue-200">
                 <div className="flex items-start">
@@ -686,7 +623,6 @@ export default function EcoQuestRoadmap() {
                 </div>
               </div>
             )}
-
             <div>
               {!showExplanation ? (
                 <button onClick={handleSubmitAnswer} disabled={selectedAnswer === null} className={`w-full py-3 px-4 rounded-xl font-medium transition-all duration-200 ${selectedAnswer !== null ? 'hover:scale-105' : 'opacity-50 cursor-not-allowed'}`} style={{ backgroundColor: selectedAnswer !== null ? colorScheme.primary : '#D1D5DB', color: 'white' }}>
@@ -699,7 +635,6 @@ export default function EcoQuestRoadmap() {
               )}
             </div>
           </div>
-
           <div className="text-center">
             <div className="inline-flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
               <span className="text-2xl mr-2">🏆</span>
@@ -711,7 +646,7 @@ export default function EcoQuestRoadmap() {
     );
   };
 
-  // ---------- App handlers ----------
+  // ---------- App handlers (no changes) ----------
   const handleLevelClick = (level, isUnlocked) => {
     if (!isUnlocked) return;
     setCurrentLevel(level.id);
@@ -721,10 +656,8 @@ export default function EcoQuestRoadmap() {
   const handleQuizComplete = (finalScore, totalQuestions) => {
     const percentage = Math.round((finalScore / totalQuestions) * 100);
     const passed = percentage >= 70;
-
     if (passed) {
       setCompletedQuizzes((prev) => (prev.includes(currentLevel) ? prev : [...prev, currentLevel]));
-
     }
   };
 
@@ -736,33 +669,35 @@ export default function EcoQuestRoadmap() {
   const currentQuiz = currentLevel ? quizData[currentLevel] : null;
 
   return (
-    <div className="relative min-h-screen font-sans" style={{ backgroundColor: '#FFFFF0' }}>
-      {/* Optional Navbar if you have it */}
-      {/* <EcoNavbar /> */}
-
+    // MODIFIED: Root div is simpler, as the scroll container manages the height.
+    <div className="relative font-sans" style={{ backgroundColor: '#FFFFF0' }}>
       {showQuiz && currentQuiz ? (
         <Quiz onBackToRoadmap={handleBackToRoadmap} onQuizComplete={handleQuizComplete} currentQuiz={currentQuiz} themeColor={roadmapData.find((r) => r.levels.some((l) => l.id === currentLevel))?.themeColor} />
       ) : (
-        <>
-          <div className="text-center py-20" style={{ backgroundColor: '#FFFFF0', color: '#6A7049' }}>
-            <h1 className="text-5xl font-bold font-['Georgia',_serif] tracking-wide">Sustainability Mastery Journey</h1>
+        // NEW: Scroll container for the full-page effect
+        <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
+          {/* NEW: Welcome section as the first full-page snap item */}
+          <div className="h-screen w-full flex flex-col items-center justify-center snap-start" style={{ backgroundColor: '#FFFFF0', color: '#6A7049' }}>
+            <div className="text-center">
+                <h1 className="text-5xl font-bold font-['Georgia',_serif] tracking-wide">Sustainability Mastery Journey</h1>
+                <p className="mt-6 text-lg animate-bounce">Scroll Down 👇</p>
+            </div>
           </div>
 
+          {/* NEW: Each roadmap is now its own snap item */}
           {roadmapData.map((roadmap, idx) => (
-            <div key={idx} className="scroll-mt-20">
+            <div key={idx} className="h-screen w-full snap-start">
               <Roadmap
                 title={roadmap.topic}
                 levels={roadmap.levels}
                 themeColor={roadmap.themeColor}
                 backgroundGif={roadmap.backgroundGif}
-                // mascot={roadmap.mascot}
-                // mascotMessage={roadmap.mascotMessage}
                 onLevelClick={handleLevelClick}
                 completedQuizzes={completedQuizzes}
               />
             </div>
           ))}
-        </>
+        </div>
       )}
     </div>
   );
