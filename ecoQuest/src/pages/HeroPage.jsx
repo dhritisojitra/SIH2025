@@ -84,13 +84,12 @@ const Cards = () => {
 export default function HeroSection() {
   return (
     <>
-    <EcoNavbar/>
     <div className="min-h-screen bg-[#F5F5DC] font-sans">
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Top Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-[#4A6741] mb-3">Save planet together</h1>
-          <p className="text-md text-gray-600 max-w-md mx-auto">
+          <p className="text-xl text-gray-600 max-w-md mx-auto">
             Where saving the planet is a game worth winning.
           </p>
         </div>
@@ -127,14 +126,13 @@ export default function HeroSection() {
         </div>
         
         {/* Zero Waste Banner */}
-       
+       <Link to="/story">
         <div className="bg-[#6A7049] rounded-2xl p-8 mb-12 text-center text-white flex items-center justify-center space-x-6">
-           <Link to='/story'>
           <Leaf className="w-10 h-10 opacity-70 transform -scale-x-100" />
           <h2 className="text-3xl font-bold tracking-wider">STORY TIME</h2>
-          </Link>
           <Leaf className="w-10 h-10 opacity-70" />
         </div>
+        </Link>
 
         {/* Recycling Tips Section */}
         <div>

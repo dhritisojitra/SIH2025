@@ -290,7 +290,7 @@ const StoryReader = ({ storyKey, onBackToSelection }) => {
 
   return (
     <div className="min-h-screen p-4" style={{ 
-      background: 'linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%)',
+      background: '#FFFFF0',
     }}>
       <Confetti show={showConfetti} />
       
@@ -342,7 +342,7 @@ const StoryReader = ({ storyKey, onBackToSelection }) => {
   <div className="mb-4">
     <div className="bg-yellow bg-opacity-100 rounded-full h-4 shadow-inner">
       <div 
-        className="bg-white h-4 rounded-full transition-all duration-700 ease-out shadow-lg"
+        className="bg-green-700 h-4 rounded-full transition-all duration-700 ease-out shadow-lg"
         style={{ width: `${((currentMessageIndex + 1) / story.messages.length) * 100}%` }}
       />
     </div>

@@ -9,7 +9,7 @@ import EnvironmentalStoryHub from "./pages/ConversationPage";
 
 function App() {
   return (<>
-    
+      <EcoNavbar/>
       <Routes>
         {/* Roadmap page */}
         <Route path="/" element={<HeroSection/>} />
