@@ -177,9 +177,13 @@ export default function HeroSection() {
                     {/* Bottom Tier: Slogan and Copyright */}
                     <div className="bg-[#4A6741] text-[#D2B48C] py-3"> {/* Slightly darker green, different text color */}
                         <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center text-xs"> {/* Removed sm:flex-row and justify-between */}
-                            <div className="flex flex-col items-center mb-2"> {/* Changed to flex-col and items-center */}
-                                <div className="flex items-center mb-1"> {/* Wrapper for Leaf and EcoConnect to keep them inline */}
-                                    <Leaf className="w-8 h-8 mr-2 text-[#D2B48C]" /> {/* Added text color */}
+                            <div className="flex flex-col items-center mb-4"> {/* Changed to flex-col and items-center */}
+                                <div className="flex items-center mb-1 space-x-3"> {/* Wrapper for Leaf and EcoConnect to keep them inline */}
+                                    <img 
+                                        src="/logo.png" 
+                                        alt="EcoQuest Logo" 
+                                        className="w-8 h-8 rounded-full object-cover"
+                                    />
                                     <span className="text-2xl font-bold">EcoQuest</span> {/* Moved EcoConnect here */}
                                 </div>
                                 <p className="text-sm text-gray-200 mt-1"> {/* Added mt-1 for spacing */}

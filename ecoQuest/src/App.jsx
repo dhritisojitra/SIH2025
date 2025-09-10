@@ -8,6 +8,7 @@ import EcoNavbar from "./components/NavBar";
 import HeroSection from "./pages/HeroPage";
 import EnvironmentalStoryHub from "./pages/ConversationPage";
 import ResourcesPage from "./pages/Resources";
+import LeaderboardPage from "./pages/Leaderboard";
 
 function App() {
   return (<>
@@ -24,6 +25,9 @@ function App() {
 
         {/* Resources page */}
         <Route path="/resources" element={<ResourcesPage />} />
+
+        {/* Leaderboard page */}
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
       </Routes>
   
 

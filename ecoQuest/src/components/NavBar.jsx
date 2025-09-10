@@ -1,4 +1,4 @@
-import { Home, Search, Menu, X, Leaf, User, BookOpen, TestTube } from 'lucide-react';
+import { Home, Search, Menu, X, Leaf, User, BookOpen, TestTube, Trophy } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 
@@ -36,20 +36,19 @@ export default function EcoNavbar() {
         <div className="flex justify-between items-center h-16">
           
           {/* Logo */}
-            <Link to="/">
-          <div className="flex items-center space-x-3 cursor-pointer group">
-            <div className={`${theme.leafBg} group-hover:${theme.leafBgHover} p-2 rounded-full backdrop-blur-sm transition-all duration-300`}>
-              <img 
-                src="/logo.png" 
-                alt="EcoQuest Logo" 
-                className="w-8 h-8 rounded-full object-cover"
-              />
+          <Link to="/">
+            <div className="flex items-center space-x-3 cursor-pointer group">
+              <div className={`${theme.leafBg} group-hover:${theme.leafBgHover} p-2 rounded-full backdrop-blur-sm transition-all duration-300`}>
+                <img 
+                  src="/logo.png" 
+                  alt="EcoQuest Logo" 
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+              </div>
+              <span className={`${theme.text} font-bold text-xl hidden sm:block group-hover:scale-105 transition-transform duration-300`}>
+                EcoQuest
+              </span>
             </div>
-            <span className={`${theme.text} font-bold text-xl hidden sm:block group-hover:scale-105 transition-transform duration-300`}>
-              EcoQuest
-            </span>
-          </div>
-
           </Link>
 
           {/* Desktop Search Bar */}
@@ -76,6 +75,7 @@ export default function EcoNavbar() {
             <Link to="/"><NavItem icon={Home} text="Home" theme={theme} /></Link>
             <Link to="/resources"><NavItem icon={BookOpen} text="Resources" theme={theme} /></Link>
             <Link to="/roadmap"><NavItem icon={TestTube} text="Test" theme={theme} /></Link>
+            <Link to="/leaderboard"><NavItem icon={Trophy} text="Leaderboard" theme={theme} /></Link>
             <Link to="/dashboard"><UserProfile theme={theme} /></Link>
           </div>
 
@@ -115,6 +115,7 @@ export default function EcoNavbar() {
               <Link to="/"><MobileNavItem icon={Home} text="Home" theme={theme} /></Link>
               <Link to="/resources"><MobileNavItem icon={BookOpen} text="Resources" theme={theme} /></Link>
               <Link to="/roadmap"><MobileNavItem icon={TestTube} text="Test" theme={theme} /></Link>
+              <Link to="/leaderboard"><MobileNavItem icon={Trophy} text="Leaderboard" theme={theme} /></Link>
               <Link to="/dashboard"><MobileNavItem icon={User} text="Profile" theme={theme} /></Link>
             </div>
           </div>
