@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import EcoQuizPage from "./pages/Quiz";  
 import "./App.css";
@@ -15,6 +16,7 @@ function App() {
         {/* Roadmap page */}
         <Route path="/" element={<HeroSection/>} />
         <Route path="/roadmap" element={<EcoQuestRoadmap/>} />
+
 
         {/* Quiz page */}
         <Route path="/quiz" element={<EcoQuizPage />} />
