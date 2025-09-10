@@ -116,7 +116,7 @@ export default function HeroSection() {
 
               <div>
                 <h3 className="font-bold text-lg text-[#4A6741]">Road - Map</h3>
-                 <p className="text-sm text-gray-500">Strat your journey</p>
+                 <p className="text-sm text-gray-500">Start your journey</p>
               </div>
             </div>
             </Link>
