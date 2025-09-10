@@ -327,12 +327,12 @@ const StoryReader = ({ storyKey, onBackToSelection }) => {
           <div className="flex items-center justify-center mb-4">
             <button 
               onClick={onBackToSelection}
-              className="absolute left-4 top-4 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300"
+              className="bg-green-900 bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300" style={{backgroundColor : primaryGreen}}
             >
               ← Back
             </button>
             <div className="text-4xl mr-3">{story.icon}</div>
-            <h1 className="text-2xl md:text-3xl font-bold text-white">
+            <h1 className="text-2xl md:text-3xl font-bold text-white" style={{ color: primaryGreen  }}>
               {story.title}
             </h1>
           </div>
@@ -346,7 +346,7 @@ const StoryReader = ({ storyKey, onBackToSelection }) => {
         style={{ width: `${((currentMessageIndex + 1) / story.messages.length) * 100}%` }}
       />
     </div>
-    <p className="text-white mt-2 font-medium text-lg">
+    <p className="text-white mt-2 font-medium text-lg" style={{color: primaryGreen}}>
       {currentMessageIndex + 1} / {story.messages.length}
     </p>
   </div>
