@@ -5,10 +5,11 @@ import Cards from "./components/Cards";
 import EcoQuestRoadmap from "./pages/test";
 import EcoNavbar from "./components/NavBar";
 import HeroSection from "./pages/HeroPage";
+import EnvironmentalStoryHub from "./pages/ConversationPage";
 
 function App() {
   return (<>
-    <EcoNavbar/>
+    
       <Routes>
         {/* Roadmap page */}
         <Route path="/" element={<HeroSection/>} />
@@ -16,6 +17,7 @@ function App() {
 
         {/* Quiz page */}
         <Route path="/quiz" element={<EcoQuizPage />} />
+        <Route path="/story" element={<EnvironmentalStoryHub/>} />
       </Routes>
   
 

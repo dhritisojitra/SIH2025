@@ -41,7 +41,7 @@ export default function EcoNavbar() {
               <Leaf className={`h-6 w-6 ${theme.leafIconColor}`} />
             </div>
             <span className={`${theme.text} font-bold text-xl hidden sm:block group-hover:scale-105 transition-transform duration-300`}>
-              EcoSave
+              EcoQuest
             </span>
           </div>
           </Link>

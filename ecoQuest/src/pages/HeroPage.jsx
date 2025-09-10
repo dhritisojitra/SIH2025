@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Leaf, Recycle, Zap, Droplets, TreePine, Globe, ChevronRight } from 'lucide-react';
 import {Link} from "react-router-dom"
+import EcoNavbar from '../components/NavBar';
+
 
 // SVG for the wooden spoon icon from the design
 const WoodenSpoonIcon = () => (
@@ -81,6 +83,8 @@ const Cards = () => {
 // The main Hero Section component
 export default function HeroSection() {
   return (
+    <>
+    <EcoNavbar/>
     <div className="min-h-screen bg-[#F5F5DC] font-sans">
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Top Header Section */}
@@ -123,9 +127,12 @@ export default function HeroSection() {
         </div>
         
         {/* Zero Waste Banner */}
+       
         <div className="bg-[#6A7049] rounded-2xl p-8 mb-12 text-center text-white flex items-center justify-center space-x-6">
+           <Link to='/story'>
           <Leaf className="w-10 h-10 opacity-70 transform -scale-x-100" />
-          <h2 className="text-3xl font-bold tracking-wider">GO TO ZERO WASTE</h2>
+          <h2 className="text-3xl font-bold tracking-wider">STORY TIME</h2>
+          </Link>
           <Leaf className="w-10 h-10 opacity-70" />
         </div>
 
@@ -141,5 +148,6 @@ export default function HeroSection() {
         </div>
       </main>
     </div>
+    </>
   );
 }

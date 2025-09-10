@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import EcoNavbar from '../components/NavBar';
 
 // Main App Component that contains all logic and UI
 const EcoQuestRoadmap = () => {
+  // State to track which quizzes have been successfully completed.
+  // This array holds the 'id' of completed levels (e.g., "water-1").
   const [completedQuizzes, setCompletedQuizzes] = useState([]);
   const [showQuiz, setShowQuiz] = useState(false);
   const [currentLevel, setCurrentLevel] = useState(null);
@@ -225,6 +228,7 @@ const EcoQuestRoadmap = () => {
           </div>
 
           {/* SVG Container for Paths */}
+          {/* This is where the path highlighting logic is implemented */}
           <svg
             className="absolute top-0 left-0 w-full pointer-events-none z-10"
             style={{ height: `${150 + levels.length * 120}px` }}
@@ -233,18 +237,21 @@ const EcoQuestRoadmap = () => {
               const currentPos = getNodePosition(index);
               const nextPos = getNodePosition(index + 1);
               const pathString = generatePath(currentPos, nextPos);
+              // Check if the current level is completed to highlight the path leading away from it
               const isCompleted = completedQuizzes.includes(level.id);
 
               return (
                 <g key={`path-${level.id}`}>
+                  {/* Default path (dotted) for all connections */}
                   <path
                     d={pathString}
-                    stroke={isCompleted ? colorScheme.primary : "#D1D5DB"}
+                    stroke={"#D1D5DB"}
                     strokeWidth="3"
                     strokeDasharray="8,4"
                     fill="none"
                     className="opacity-60"
                   />
+                  {/* Highlighted path for completed levels */}
                   {isCompleted && (
                     <>
                       <path
@@ -281,10 +288,11 @@ const EcoQuestRoadmap = () => {
           </svg>
 
           {/* Level Nodes */}
+          {/* This is where the tick mark and node styling logic is implemented */}
           <div className="relative z-20">
             {levels.map((level, index) => {
               const position = getNodePosition(index);
-              const isCompleted = completedQuizzes.includes(level.id);
+              const isCompleted = completedQuizzes.includes(level.id); // Check for tick mark
               const isUnlocked = index === 0 || completedQuizzes.includes(levels[index - 1].id);
 
               return (
@@ -296,7 +304,7 @@ const EcoQuestRoadmap = () => {
                 >
                   <div
                     className={`
-                      w-20 h-20 rounded-full flex flex-col items-center justify-center
+                      relative w-20 h-20 rounded-full flex flex-col items-center justify-center
                       shadow-lg transition-all duration-300 hover:scale-110
                       ${isUnlocked
                         ? 'text-white shadow-lg cursor-pointer'
@@ -311,20 +319,21 @@ const EcoQuestRoadmap = () => {
                     <div className="text-2xl flex items-center justify-center">
                       {isUnlocked ? level.icon : "🔒"}
                     </div>
+                    {/* Tick mark for completed quizzes */}
+                    {isCompleted && (
+                      <div
+                        className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-sm"
+                        style={{ backgroundColor: colorScheme.primary }}
+                      >
+                        ✓
+                      </div>
+                    )}
                   </div>
                   <div className="text-center mt-2">
                     <span className={`text-sm font-medium ${isUnlocked ? 'text-white' : 'text-gray-200'}`}>
                       {level.title}
                     </span>
                   </div>
-                  {isCompleted && (
-                    <div
-                      className="absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-sm"
-                      style={{ backgroundColor: colorScheme.primary }}
-                    >
-                      ✓
-                    </div>
-                  )}
                 </div>
               );
             })}
@@ -640,6 +649,7 @@ const EcoQuestRoadmap = () => {
     const percentage = Math.round((finalScore / totalQuestions) * 100);
     const passed = percentage >= 70;
 
+    // This is the core logic: if the user passes, add the level to the completedQuizzes array
     if (passed && !completedQuizzes.includes(currentLevel)) {
       setCompletedQuizzes([...completedQuizzes, currentLevel]);
     }
@@ -654,6 +664,8 @@ const EcoQuestRoadmap = () => {
 
   // Main render logic
   return (
+    <>
+    <EcoNavbar/>
     <div className="relative min-h-screen font-sans" style={{ backgroundColor: '#FFFFF0' }}>
       {showQuiz && currentQuiz ? (
         <Quiz
@@ -682,12 +694,14 @@ const EcoQuestRoadmap = () => {
                 mascot={roadmap.mascot}
                 mascotMessage={roadmap.mascotMessage}
                 onLevelClick={handleLevelClick}
+                completedQuizzes={completedQuizzes}
               />
             </div>
           ))}
         </>
       )}
     </div>
+    </>
   );
 };
 

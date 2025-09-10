@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EcoQuizPage = () => {
+const EcoQuizPage = ({ levelId = 1, onQuizComplete }) => {
   // Sample quiz data for different levels and difficulties
   const quizData = {
     1: { // Seeds level
@@ -66,7 +66,6 @@ const EcoQuizPage = () => {
   };
 
   // State management
-  const [currentLevel] = useState(1); // This would be passed as prop from roadmap
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -74,7 +73,7 @@ const EcoQuizPage = () => {
   const [quizComplete, setQuizComplete] = useState(false);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
 
-  const currentQuiz = quizData[currentLevel];
+  const currentQuiz = quizData[levelId];
   const question = currentQuiz?.questions[currentQuestion];
 
   // Difficulty colors
@@ -116,6 +115,15 @@ const EcoQuizPage = () => {
       setShowExplanation(false);
     } else {
       setQuizComplete(true);
+
+      // Calculate pass/fail
+      const percentage = Math.round(((score + (selectedAnswer === question.correct ? 1 : 0)) / currentQuiz.questions.length) * 100);
+      const passed = percentage >= 70;
+
+      // Notify parent (roadmap) that quiz is complete
+      if (onQuizComplete) {
+        onQuizComplete(levelId, passed);
+      }
     }
   };
 
