@@ -190,7 +190,7 @@ const StorySelectionPage = ({ onSelectStory }) => {
           <h1 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4">
             🌍 Environmental Science Stories
           </h1>
-          <p className="text-xl text-white opacity-90">
+          <p className="text-xl text-[#4A6741] opacity-90">
             Discover fascinating environmental phenomena through interactive stories
           </p>
         </div>
