@@ -1,24 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ForestLoader from './components/Loader'
-import StreakTracker from './components/StreakTracker.jsx';
-import WeeklyEcoGoalCard from './components/WeeklyEcoGoalCard.jsx';
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import EcoQuizPage from "./pages/Quiz";  
+import "./App.css";
+import Cards from "./components/Cards";
+import EcoQuestRoadmap from "./pages/test";
+import EcoNavbar from "./components/NavBar";
+import HeroSection from "./pages/HeroPage";
+import EnvironmentalStoryHub from "./pages/ConversationPage";
+import ResourcesPage from "./pages/Resources";
 
 function App() {
-  const [count, setCount] = useState(0)
+  return (<>
+      <EcoNavbar/>
+      <Routes>
+        {/* Roadmap page */}
+        <Route path="/" element={<HeroSection/>} />
+        <Route path="/roadmap" element={<EcoQuestRoadmap/>} />
 
-  return (
-    <div className="App">
-      <h1 style={{ textAlign: 'center', marginTop: '32px', marginBottom: '32px', fontSize: '2rem', fontWeight: 'bold', color: '#234b1a' }}>
-        Dashboard
-      </h1>
-      <div className="dashboard-flex-container">
-        <WeeklyEcoGoalCard />
-      </div>
-    </div>
-  )
+
+        {/* Quiz page */}
+        <Route path="/quiz" element={<EcoQuizPage />} />
+        <Route path="/story" element={<EnvironmentalStoryHub/>} />
+
+        {/* Resources page */}
+        <Route path="/resources" element={<ResourcesPage />} />
+      </Routes>
+  
+
+   </>
+  );
 }
 
-export default App
+export default App;
