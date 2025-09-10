@@ -2,6 +2,7 @@ import { Home, Search, Menu, X, Leaf, User, BookOpen, TestTube } from 'lucide-re
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 
+
 export default function EcoNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,12 +39,17 @@ export default function EcoNavbar() {
             <Link to="/">
           <div className="flex items-center space-x-3 cursor-pointer group">
             <div className={`${theme.leafBg} group-hover:${theme.leafBgHover} p-2 rounded-full backdrop-blur-sm transition-all duration-300`}>
-              <Leaf className={`h-6 w-6 ${theme.leafIconColor}`} />
+              <img 
+                src="/logo.png" 
+                alt="EcoQuest Logo" 
+                className="w-8 h-8 rounded-full object-cover"
+              />
             </div>
             <span className={`${theme.text} font-bold text-xl hidden sm:block group-hover:scale-105 transition-transform duration-300`}>
               EcoQuest
             </span>
           </div>
+
           </Link>
 
           {/* Desktop Search Bar */}

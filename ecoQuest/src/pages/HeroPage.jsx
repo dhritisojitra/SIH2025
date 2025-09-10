@@ -180,14 +180,14 @@ export default function HeroSection() {
                             <div className="flex flex-col items-center mb-2"> {/* Changed to flex-col and items-center */}
                                 <div className="flex items-center mb-1"> {/* Wrapper for Leaf and EcoConnect to keep them inline */}
                                     <Leaf className="w-8 h-8 mr-2 text-[#D2B48C]" /> {/* Added text color */}
-                                    <span className="text-2xl font-bold">EcoConnect</span> {/* Moved EcoConnect here */}
+                                    <span className="text-2xl font-bold">EcoQuest</span> {/* Moved EcoConnect here */}
                                 </div>
                                 <p className="text-sm text-gray-200 mt-1"> {/* Added mt-1 for spacing */}
                                     Join us in making the planet a greener place, one step at a time.
                                 </p>
                             </div>
                             <p className="mt-2"> {/* Added mt-2 to push copyright to new line */}
-                                © {new Date().getFullYear()} EcoConnect. All rights reserved.
+                                © {new Date().getFullYear()} EcoQuest. All rights reserved.
                             </p>
                         </div>
                     </div>
