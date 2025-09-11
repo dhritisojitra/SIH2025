@@ -6,6 +6,8 @@ import lockIcon from '../assets/lock_icon.png';
 
 const StreakTracker = () => {
   const currentStreak = 25;
+
+  // Weekly Goal
   const [weeklyGoal, setWeeklyGoal] = useState([
     { day: 'S', completed: true },
     { day: 'M', completed: true },
@@ -24,9 +26,11 @@ const StreakTracker = () => {
     );
   };
 
+  // Rewards
   const nextRewardDays = 30;
   const nextRewardProgress = (currentStreak / nextRewardDays) * 100;
 
+  // Calendar
   const calendarDays = [
     { day: 1, isCompleted: true },
     { day: 2, isCompleted: true },
@@ -60,6 +64,7 @@ const StreakTracker = () => {
     { day: 30, isCompleted: true },
   ];
 
+  // Daily Actions
   const [dailyActions, setDailyActions] = useState([
     { name: 'Recycle Plastics', completed: true },
     { name: 'Use Reusable Bottle', completed: true },
@@ -74,16 +79,25 @@ const StreakTracker = () => {
     );
   };
 
+  // File Upload
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files);
+    setUploadedFiles((prev) => [...prev, ...files]);
+  };
+
+  // --- Render Cards ---
   const renderStreakCard = () => (
     <div className="bg-green-100 rounded-2xl shadow-sm p-6 pr-12 flex items-center">
       <div className="flex flex-col items-start whitespace-nowrap gap-0.5">
         <div className="text-8xl font-bold text-green-800">{currentStreak}</div>
         <div className="text-3xl font-bold text-green-800">Streak Days</div>
       </div>
-      <img 
-        src={plantLarge} 
-        alt="Growing plant" 
-        className="w-75 h-auto bg-transparent -ml-20 mr-38" 
+      <img
+        src={plantLarge}
+        alt="Growing plant"
+        className="w-75 h-auto bg-transparent -ml-20 mr-38"
       />
     </div>
   );
@@ -93,8 +107,8 @@ const StreakTracker = () => {
       <h2 className="text-2xl font-bold mb-4 text-green-700">Weekly Eco-Goal</h2>
       <div className="flex gap-2 mb-2">
         {weeklyGoal.map((item, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="w-9 h-9 rounded-full bg-green-200 flex items-center justify-center text-gray-800 font-bold cursor-pointer relative overflow-hidden"
             onClick={() => toggleWeeklyGoal(index)}
           >
@@ -143,13 +157,46 @@ const StreakTracker = () => {
         <span className="text-lg text-green-800 font-bold">Next Reward @ {nextRewardDays} Days!</span>
       </div>
       <div className="w-full h-2 bg-green-100 rounded-lg mt-2 relative">
-        <div 
-          className="h-full bg-green-500 rounded-lg transition-all duration-300" 
+        <div
+          className="h-full bg-green-500 rounded-lg transition-all duration-300"
           style={{ width: `${nextRewardProgress}%` }}
         ></div>
       </div>
     </div>
   );
+
+const renderUploadCard = () => (
+    <div className="bg-white rounded-2xl shadow-sm p-6 flex flex-col items-start">
+      <h2 className="text-2xl font-bold mb-4 text-green-700">Upload Files</h2>
+      {/* The id attribute is now correctly added to the input */}
+      <input
+        type="file"
+        multiple
+        id="fileInput"
+        onChange={handleFileUpload}
+        className="hidden"
+      />
+
+      {/* The htmlFor attribute on the label correctly points to the input's id */}
+      <label
+        htmlFor="fileInput"
+        className="px-4 py-2 bg-green-600 text-white rounded-lg cursor-pointer hover:bg-green-700 transition mb-4"
+      >
+        Choose Files
+      </label>
+
+      {uploadedFiles.length > 0 ? (
+        <ul className="list-disc ml-4 text-green-800">
+          {uploadedFiles.map((file, index) => (
+            <li key={index} className="text-sm">{file.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-gray-500 text-sm">No files uploaded yet.</p>
+      )}
+    </div>
+  );
+
 
   const renderCalendarCard = () => (
     <div className="bg-white rounded-2xl shadow-sm p-6 w-96 h-96 static ml-auto mr-30 mt-12 z-10">
@@ -161,14 +208,14 @@ const StreakTracker = () => {
           </div>
         ))}
         {calendarDays.map((day, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`w-10 h-10 flex items-center justify-center rounded-full text-lg ${
-              day.isCurrentDay 
-                ? "border-2 border-green-700 bg-green-200 text-gray-800" 
-                : day.isCompleted 
-                ? "bg-green-700 text-white" 
-                : day.isMissed 
+              day.isCurrentDay
+                ? "border-2 border-green-700 bg-green-200 text-gray-800"
+                : day.isCompleted
+                ? "bg-green-700 text-white"
+                : day.isMissed
                 ? "bg-gray-100 border border-dashed border-gray-300 text-gray-300"
                 : ""
             }`}
@@ -180,6 +227,7 @@ const StreakTracker = () => {
     </div>
   );
 
+  // --- Main Return ---
   return (
     <div className="flex items-start w-full flex-col bg-yellow-50 min-h-screen">
       <h1 className="text-center text-5xl font-bold text-green-700 ml-96 mt-7.5 relative z-10">
@@ -192,6 +240,7 @@ const StreakTracker = () => {
             {renderWeeklyGoalCard()}
             {renderDailyActionsCard()}
             {renderRewardsCard()}
+            {renderUploadCard()}
           </div>
         </div>
         {renderCalendarCard()}
