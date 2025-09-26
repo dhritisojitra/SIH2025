@@ -75,7 +75,7 @@ export default function EcoNavbar() {
             <Link to="/"><NavItem icon={Home} text="Home" theme={theme} /></Link>
             <Link to="/resources"><NavItem icon={BookOpen} text="Resources" theme={theme} /></Link>
             <Link to="/roadmap"><NavItem icon={TestTube} text="Test" theme={theme} /></Link>
-            <Link to="/leaderboard"><NavItem icon={Trophy} text="Leaderboard" theme={theme} /></Link>
+            <Link to="/games"><NavItem icon={Trophy} text="Games" theme={theme} /></Link>
             <Link to="/dashboard"><UserProfile theme={theme} /></Link>
           </div>
 
@@ -115,7 +115,7 @@ export default function EcoNavbar() {
               <Link to="/"><MobileNavItem icon={Home} text="Home" theme={theme} /></Link>
               <Link to="/resources"><MobileNavItem icon={BookOpen} text="Resources" theme={theme} /></Link>
               <Link to="/roadmap"><MobileNavItem icon={TestTube} text="Test" theme={theme} /></Link>
-              <Link to="/leaderboard"><MobileNavItem icon={Trophy} text="Leaderboard" theme={theme} /></Link>
+              <Link to="/games"><MobileNavItem icon={Trophy} text="Games" theme={theme} /></Link>
               <Link to="/dashboard"><MobileNavItem icon={User} text="Profile" theme={theme} /></Link>
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function EcoQuestRoadmap() {
     {
       topic: 'Water Management',
       themeColor: 'blue',
-      backgroundGif: './water.gif',
+      backgroundGif: 'water.gif',
       mascot: '💧',
       mascotMessage: 'Every drop counts! 🌊',
       levels: [
@@ -38,7 +38,7 @@ export default function EcoQuestRoadmap() {
     {
       topic: 'Carbon Footprint',
       themeColor: 'brown',
-      backgroundGif: './carbon_footprint.gif',
+      backgroundGif: 'https://i.pinimg.com/originals/2d/84/e4/2d84e4a0f7673b4fc5578875f3136f9c.gif',
       mascot: '👣',
       mascotMessage: 'Carbon neutral champion! 🍃',
       levels: [
