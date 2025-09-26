@@ -201,20 +201,20 @@ export default function Game() {
   }
 
   return (
-    <div className="min-h-screen bg-green-50 p-6 flex flex-col gap-6">
+    <div className="min-h-screen bg-[#F5F5DC] p-6 flex flex-col gap-6">
       {/* Level Header */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <h2 className="text-3xl font-bold text-green-700">{level.title}</h2>
         <div className="flex gap-2">
           <button
             onClick={resetLevel}
-            className="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-500 transition"
+            className="px-4 py-2 bg-emerald-700 text-white rounded-lg shadow hover:bg-emerald-700 transition"
           >
             Reset
           </button>
           <Link
             to="/levels"
-            className="px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-100 transition"
+            className="px-4 py-2 border border-emerald-700 text-emerald-700 rounded-lg hover:bg-emerald-700 transition"
           >
             Back
           </Link>
@@ -222,12 +222,12 @@ export default function Game() {
       </div>
 
       {/* Hint */}
-      <p className="text-green-800 italic">Hint: {level.hint}</p>
+      <p className="text-emerald-700 italic">Hint: {level.hint}</p>
 
       {/* Game Board */}
       <div
         ref={boardRef}
-        className="bg-white rounded-xl shadow p-4 flex justify-center overflow-hidden relative"
+        className="bg-[#F5F5DC] rounded-xl shadow p-4 flex justify-center overflow-hidden relative"
         style={{ minHeight: 420 }}
       >
         <svg
@@ -299,17 +299,17 @@ export default function Game() {
       </div>
 
       {/* Status Panel */}
-      <div className="bg-white rounded-xl shadow p-4">
-        <h3 className="text-xl font-semibold text-green-700 mb-2">Species Status</h3>
+      <div className="bg-[#F5F5DC] rounded-xl shadow p-4">
+        <h3 className="text-xl font-semibold text-emerald-700 mb-2">Species Status</h3>
         <ul className="list-none space-y-2">
           {level.species.map((s) => (
             <li key={s.id} className="flex items-center gap-3">
               <span
                 className={`inline-block w-3 h-3 rounded-full ${
-                  aliveMap[s.id] ? "bg-green-500" : "bg-gray-400"
+                  aliveMap[s.id] ? "bg-emerald-700" : "bg-[#F5F5DC]"
                 }`}
               />
-              <div className={aliveMap[s.id] ? "text-green-800" : "text-gray-400 line-through"}>
+              <div className={aliveMap[s.id] ? "text-emerald-700" : "text-gray-400 line-through"}>
                 <strong>{s.label}</strong> — {aliveMap[s.id] ? "Alive ✅" : "Collapsed ❌"}
               </div>
             </li>

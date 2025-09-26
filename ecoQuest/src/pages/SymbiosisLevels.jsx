@@ -4,7 +4,7 @@ import levels from '../data/levels'
 
 export default function SymbiosisLevels() {
   return (
-    <div className="min-h-screen bg-green-50 p-6">
+    <div className="min-h-screen bg-[#F5F5DC] p-6">
       <h2 className="text-3xl font-bold text-green-700 mb-6 text-center">Levels</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {levels.map((lvl) => (
@@ -22,7 +22,7 @@ export default function SymbiosisLevels() {
       <div className="mt-8 text-center">
         <Link
           to="/"
-          className="px-5 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-500 transition"
+          className="px-5 py-2 bg-[#4A6741] text-white rounded-lg shadow hover:bg-emerald-700 transition"
         >
           Back to Home
         </Link>
