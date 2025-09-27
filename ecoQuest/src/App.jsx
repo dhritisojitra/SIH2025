@@ -9,7 +9,7 @@ import HeroSection from "./pages/HeroPage";
 import EnvironmentalStoryHub from "./pages/ConversationPage";
 import ResourcesPage from "./pages/Resources";
 import Footer from "./components/Footer"
-import WeeklyEcoGoalCard from "./components/WeeklyEcoGoalCard";
+import Dashboard from "./pages/WeeklyEcoGoalCard";
 
 function App() {
   return (<>
@@ -30,7 +30,7 @@ function App() {
 
 
         {/* Dash Board */}
-        <Route path="/dashboard" element={<WeeklyEcoGoalCard/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
       </Routes>
       <Footer/>
 
