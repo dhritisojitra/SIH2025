@@ -28,8 +28,6 @@ export default function Footer(){
                                 <Link to="/resources" className="hover:underline text-gray-200">RESOURCES</Link>
                                 <Link to="/roadmap" className="hover:underline text-gray-200">ROADMAP</Link>
                                 <Link to="/story" className="hover:underline text-gray-200">STORY</Link>
-                                <Link to="#" className="hover:underline text-gray-200">CONTACT</Link>
-                                <Link to="#" className="hover:underline text-gray-200">BLOG</Link>
                             </nav>
                         </div>
                     </div>

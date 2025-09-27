@@ -26,6 +26,7 @@ function App() {
         {/* Quiz page */}
         <Route path="/quiz" element={<EcoQuizPage />} />
         <Route path="/story" element={<EnvironmentalStoryHub/>} />
+        
 
         {/* Resources page */}
         <Route path="/resources" element={<ResourcesPage />} />
