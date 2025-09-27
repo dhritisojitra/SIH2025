@@ -9,7 +9,10 @@ import HeroSection from "./pages/HeroPage";
 import EnvironmentalStoryHub from "./pages/ConversationPage";
 import ResourcesPage from "./pages/Resources";
 import Footer from "./components/Footer"
-import Dashboard from "./pages/WeeklyEcoGoalCard";
+import WeeklyEcoGoalCard from "./components/WeeklyEcoGoalCard";
+import SymbiosisLevels from "./pages/SymbiosisLevels";
+import SymbiosisHome from "./pages/Games";
+import Game from "./pages/SymbiosisGame";
 
 function App() {
   return (<>
@@ -23,6 +26,7 @@ function App() {
         {/* Quiz page */}
         <Route path="/quiz" element={<EcoQuizPage />} />
         <Route path="/story" element={<EnvironmentalStoryHub/>} />
+        
 
         {/* Resources page */}
         <Route path="/resources" element={<ResourcesPage />} />
@@ -30,7 +34,12 @@ function App() {
 
 
         {/* Dash Board */}
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/dashboard" element={<WeeklyEcoGoalCard/>} />
+
+         <Route path="/games" element={<SymbiosisHome/>} />
+          <Route path="/SymbiosisLevels" element={<SymbiosisLevels/>} />
+          <Route path="/SymbiosisGame/:levelId" element={<Game/>} />
+
       </Routes>
       <Footer/>
 

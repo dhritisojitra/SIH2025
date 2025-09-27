@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Leaf, Recycle, Zap, Droplets, TreePine, Globe, ChevronRight } from 'lucide-react'; // Added social icons
 import { Link } from "react-router-dom";
-import EcoNavbar from '../components/NavBar'; // Assuming this path is correct
 
 // SVG for the wooden spoon icon from the design
 const WoodenSpoonIcon = () => (
@@ -136,9 +135,6 @@ export default function HeroSection() {
                     <div className="mb-12"> {/* Added mb-12 for spacing before footer */}
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-2xl font-bold text-[#4A6741]">Recycling tips</h2>
-                            <button className="flex items-center text-sm font-medium text-[#6B8E23] hover:text-[#556B2F] transition-colors">
-                                See all <ChevronRight className="w-4 h-4 ml-1" />
-                            </button>
                         </div>
                         <Cards />
                     </div>
