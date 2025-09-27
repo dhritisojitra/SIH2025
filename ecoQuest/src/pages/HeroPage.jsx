@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Leaf, Recycle, Zap, Droplets, TreePine, Globe, ChevronRight } from 'lucide-react'; // Added social icons
+import { Leaf, Recycle, Zap, Droplets, TreePine, Globe } from 'lucide-react';
 import { Link } from "react-router-dom";
 
 // SVG for the wooden spoon icon from the design
@@ -74,65 +74,74 @@ const Cards = () => {
             ))}
         </div>
     );
-
 };
 
 // The main Hero Section component
 export default function HeroSection() {
-  return (
-    <>
-    <div className="min-h-screen bg-[#F5F5DC] font-sans">
-      <main className="max-w-6xl mx-auto px-4 py-12">
-        {/* Top Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#4A6741] mb-3">Save planet together</h1>
-          <p className="text-xl text-gray-600 max-w-md mx-auto">
-            Where saving the planet is a game worth winning.
-          </p>
-        </div>
+    return (
+        <>
+            <div className="min-h-screen bg-[#F5F5DC] font-sans">
+                {/* MODIFICATION START: Background image container moved outside 'main' for full width */}
+                <div 
+                    className="w-full bg-cover bg-center mb-20 rounded-br-3xl rounded-bl-3xl" // Removed rounded-2xl to avoid corner rounding
+                    style={{
+                        backgroundImage: 'url("https://timess3spore.s3.amazonaws.com/ndata/et_images/desktop_image_webp/c1378a171b8dfc11cadaff31a9bdce2fthumbnail_environment-education.webp")',
+                        minHeight: '400px', // You can adjust this height as needed
+                    }}
+                >
+                    <div className="h-full min-h-[400px] flex flex-col justify-center items-center text-center p-8">
+                        <h1 className="text-4xl md:text-5xl font-bold text-orange-500 mb-3">
+                            Save planet together
+                        </h1>
+                        <p className="text-xl text-orange-700 max-w-md mx-auto">
+                            Where saving the planet is a game worth winning.
+                        </p>
+                    </div>
+                </div>
+                {/* MODIFICATION END */}
 
-        {/* Popular Themes Section */}
-        <div className="mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-[#4A6741]">Popular themes</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Link to="/resources">
-            <div className="bg-[#FEFBF6] p-6 rounded-2xl shadow-sm flex items-center space-x-4 hover:shadow-md transition-shadow cursor-pointer">
-              <div className="bg-[#EAE7D6] p-3 rounded-full">
-                <WoodenSpoonIcon />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg text-[#4A6741]">Resources</h3>
-              </div>
-            </div>
-            </Link>
-            <Link to="/roadmap">
-            <div className="bg-[#FEFBF6] p-6 rounded-2xl shadow-sm flex items-center space-x-4 hover:shadow-md transition-shadow cursor-pointer">
-               <div className="bg-[#EAE7D6] p-3 rounded-full">
-                <MeshBagIcon />
-              </div>
+                <main className="max-w-6xl mx-auto px-4 py-12 -mt-24"> {/* Adjusted margin-top to pull content up a bit */}
+                    {/* Popular Themes Section */}
+                    <div className="mb-12">
+                        <div className="flex justify-between items-center mb-6">
+                            <h2 className="text-2xl font-bold text-[#4A6741]">Popular themes</h2>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <Link to="/resources">
+                                <div className="bg-[#FEFBF6] p-6 rounded-2xl shadow-sm flex items-center space-x-4 hover:shadow-md transition-shadow cursor-pointer">
+                                    <div className="bg-[#EAE7D6] p-3 rounded-full">
+                                        <WoodenSpoonIcon />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-lg text-[#4A6741]">Resources</h3>
+                                    </div>
+                                </div>
+                            </Link>
+                            <Link to="/roadmap">
+                                <div className="bg-[#FEFBF6] p-6 rounded-2xl shadow-sm flex items-center space-x-4 hover:shadow-md transition-shadow cursor-pointer">
+                                    <div className="bg-[#EAE7D6] p-3 rounded-full">
+                                        <MeshBagIcon />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-lg text-[#4A6741]">Road - Map</h3>
+                                        <p className="text-sm text-gray-500">Start your journey</p>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
 
-              <div>
-                <h3 className="font-bold text-lg text-[#4A6741]">Road - Map</h3>
-                 <p className="text-sm text-gray-500">Start your journey</p>
-              </div>
-            </div>
-            </Link>
-          </div>
-        </div>
-        
-        {/* Zero Waste Banner */}
-       <Link to="/story">
-        <div className="bg-[#6A7049] rounded-2xl p-8 mb-12 text-center text-white flex items-center justify-center space-x-6">
-          <Leaf className="w-10 h-10 opacity-70 transform -scale-x-100" />
-          <h2 className="text-3xl font-bold tracking-wider">STORY TIME</h2>
-          <Leaf className="w-10 h-10 opacity-70" />
-        </div>
-        </Link>
+                    {/* Zero Waste Banner */}
+                    <Link to="/story">
+                        <div className="bg-[#6A7049] rounded-2xl p-8 mb-12 text-center text-white flex items-center justify-center space-x-6">
+                            <Leaf className="w-10 h-10 opacity-70 transform -scale-x-100" />
+                            <h2 className="text-3xl font-bold tracking-wider">STORY TIME</h2>
+                            <Leaf className="w-10 h-10 opacity-70" />
+                        </div>
+                    </Link>
 
                     {/* Recycling Tips Section */}
-                    <div className="mb-12"> {/* Added mb-12 for spacing before footer */}
+                    <div className="mb-12">
                         <div className="flex justify-between items-center mb-6">
                             <h2 className="text-2xl font-bold text-[#4A6741]">Recycling tips</h2>
                         </div>
@@ -142,5 +151,4 @@ export default function HeroSection() {
             </div>
         </>
     );
-
 }
