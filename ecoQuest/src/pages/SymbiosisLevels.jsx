@@ -10,7 +10,7 @@ export default function SymbiosisLevels() {
         {levels.map((lvl) => (
           <Link
             key={lvl.id}
-            to={`/SymbiosisGame/${lvl.id}`}
+            to={`/symbiosis-game/${lvl.id}`}
             className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition flex flex-col gap-2 border-l-4 border-green-600"
           >
             <h3 className="text-xl font-semibold text-green-800">{lvl.title}</h3>
