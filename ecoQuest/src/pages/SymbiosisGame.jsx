@@ -213,7 +213,7 @@ export default function Game() {
             Reset
           </button>
           <Link
-            to="/levels"
+            to="/games"
             className="px-4 py-2 border border-emerald-700 text-emerald-700 rounded-lg hover:bg-emerald-700 transition"
           >
             Back
