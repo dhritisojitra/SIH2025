@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import EcoQuizPage from "./pages/Quiz";  
 import "./App.css";
@@ -8,45 +7,42 @@ import EcoNavbar from "./components/NavBar";
 import HeroSection from "./pages/HeroPage";
 import EnvironmentalStoryHub from "./pages/ConversationPage";
 import ResourcesPage from "./pages/Resources";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import Dashboard from "./pages/WeeklyEcoGoalCard";
+
+// Games
+import GamesHome from "./pages/GamesHome";   // <-- new hub page
 import SymbiosisLevels from "./pages/SymbiosisLevels";
-import SymbiosisHome from "./pages/Games";
-import Game from "./pages/SymbiosisGame";
+import SymbiosisGame from "./pages/SymbiosisGame";
+import FoodprintDetective from "./pages/FoodprintDetective";
 
 function App() {
-  return (<>
-      <EcoNavbar/>
+  return (
+    <>
+      <EcoNavbar />
       <Routes>
         {/* Roadmap page */}
-        <Route path="/" element={<HeroSection/>} />
-        <Route path="/roadmap" element={<EcoQuestRoadmap/>} />
-
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/roadmap" element={<EcoQuestRoadmap />} />
 
         {/* Quiz page */}
         <Route path="/quiz" element={<EcoQuizPage />} />
-        <Route path="/story" element={<EnvironmentalStoryHub/>} />
-        
+        <Route path="/story" element={<EnvironmentalStoryHub />} />
 
         {/* Resources page */}
         <Route path="/resources" element={<ResourcesPage />} />
 
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
 
-
-        {/* Dash Board */}
-        <Route path="/dashboard" element={<Dashboard/>} />
-
-         <Route path="/games" element={<SymbiosisHome/>} />
-          <Route path="/SymbiosisLevels" element={<SymbiosisLevels/>} />
-          <Route path="/SymbiosisGame/:levelId" element={<Game/>} />
-
+        {/* Games hub + individual games */}
+        <Route path="/games" element={<GamesHome />} />
+        <Route path="/symbiosis-levels" element={<SymbiosisLevels />} />
+        <Route path="/symbiosis-game/:levelId" element={<SymbiosisGame />} />
+        <Route path="/foodprint-detective" element={<FoodprintDetective />} />
       </Routes>
-      <Footer/>
-
-
-  
-
-   </>
+      <Footer />
+    </>
   );
 }
 
