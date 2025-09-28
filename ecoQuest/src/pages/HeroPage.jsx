@@ -81,21 +81,15 @@ export default function HeroSection() {
     return (
         <>
             <div className="min-h-screen bg-[#F5F5DC] font-sans">
-                {/* MODIFICATION START: The background container now wraps more content */}
-                <div 
-                    className="w-full bg-cover bg-center rounded-b-3xl"
-                    style={{
-                        backgroundImage: 'url("https://timess3spore.s3.amazonaws.com/ndata/et_images/desktop_image_webp/c1378a171b8dfc11cadaff31a9bdce2fthumbnail_environment-education.webp")',
-                    }}
-                >
+                
                     {/* This inner div centers all the content on top of the background */}
-                    <div className="max-w-6xl mx-auto px-4 py-5">
+                    <div className="max-w-6xl mx-auto px-4 py-12">
                         {/* Heading Section */}
-                        <div className="text-center mb-30">
-                            <h1 className="text-4xl md:text-5xl font-bold text-orange-500 mb-3">
+                        <div className="text-center mb-25">
+                            <h1 className="text-4xl md:text-5xl font-bold text-emerald-800 mb-3">
                                 Save planet together
                             </h1>
-                            <p className="text-xl text-orange-500 max-w-md mx-auto">
+                            <p className="text-xl text-emerald-800 max-w-md mx-auto">
                                 Where saving the planet is a game worth winning.
                             </p>
                         </div>
@@ -140,8 +134,7 @@ export default function HeroSection() {
                     </Link>
                     </div>
                     
-                </div>
-                {/* MODIFICATION END */}
+                
 
                 {/* The rest of the content remains in a standard centered container */}
                 <main className="max-w-6xl mx-auto px-4 py-12">
